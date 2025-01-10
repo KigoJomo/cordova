@@ -19,9 +19,9 @@ const ProductCard: FC<ProductProps> = ({ image, name, price, className }) => {
         className="w-full aspect-[3/4]"
        />
 
-       <div className="w-full flex items-center justify-between">
+       <div className="w-full flex flex-col md:flex-row md:items-center justify-between">
           <h4 className="capitalize font-semibold">{name}</h4>
-          <p>Ksh {price}</p>
+          <p className="italic text-sm">Ksh {price.toLocaleString()}</p>
        </div>
     </div>
   )

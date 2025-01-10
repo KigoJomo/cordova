@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="relative scrollbar-hidden">
+    <html lang="en" className="scrollbar-hidden">
       <body className="scrollbar-hidden">
         <Header />
         {children}

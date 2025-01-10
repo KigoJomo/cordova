@@ -76,15 +76,13 @@ img {
 html {
   height: 100dvh;
   width: 100vw;
-  overflow-x: hidden;
   overflow-y: visible;
+  position: relative;
+  scroll-behavior: smooth;
 
   body {
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
-
     color: var(--foreground);
+    position: static;
 
     header {
       width: 100vw;
