@@ -1,21 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --foreground: #2c2c2c;
+  --foreground-light: #4d4d4d;
   --background: #ffffff;
-  --foreground: #171717;
+
+  --font-size: 1rem;
+  --font-ratio: 2;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-ratio: 1.6;
+    --font-size: 0.9rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gothic A1', serif;
+  color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  /* text-transform: capitalize; */
+  color: var(--accent);
+}
+
+h1 {
+  font-size: calc(
+    var(--font-size) * var(--font-ratio) * var(--font-ratio) * var(--font-ratio)
+  );
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: calc(var(--font-size) * var(--font-ratio) * var(--font-ratio));
+}
+
+h3 {
+  font-size: calc(var(--font-size) * var(--font-ratio));
+}
+
+h4 {
+  font-size: calc(var(--font-size));
+}
+
+p,
+li,
+label {
+  font-size: calc(var(--font-size) * 1);
+  /* color: var(--foreground-light); */
+}
+
+img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  height: 100dvh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    color: var(--foreground);
+
+    header {
+      width: 100vw;
+      padding: 1rem 2rem;
+    }
+
+    section {
+      width: 100vw;
+      height: fit-content;
+      overflow: hidden;
+      flex-shrink: 0 !important;
+      padding: 4rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 0.8rem 1rem;
+      }
+      section {
+        padding: 1rem 1rem;
+      }
+    }
+  }
 }
