@@ -9,49 +9,48 @@ interface CategoryItem {
   content: ReactNode;
 }
 
+interface Category {
+  title: string;
+  key: ProductCategory; // Changed from string to ProductCategory
+  description: string;
+}
+
 const Categories: FC = () => {
-  const categories = [
+  const categories: Category[] = [
     {
       title: "Ski Suits",
-      key: "ski_suits",
+      key: "ski_suits" as ProductCategory,
       description:
         "Conquer the slopes with top-notch insulation and weather resistance. Designed for warmth, mobility, and comfort in extreme conditions, so you can focus on the thrill of the descent.",
     },
     {
       title: "Jackets",
-      key: "jackets",
+      key: "jackets" as ProductCategory,
       description:
         "Stylish, breathable outerwear that keeps you warm and protected. Built to block wind and repel moisture, these jackets adapt to changing weather for all-day comfort.",
     },
     {
       title: "Pants",
-      key: "pants",
+      key: "pants" as ProductCategory,
       description:
         "Durable, comfortable bottoms for active or casual wear. Made with resilient materials to handle any adventure while keeping you stylish and mobile.",
     },
   ];
 
-  const accordionItems: CategoryItem[] = []
+  const accordionItems: CategoryItem[] = categories.map((category) => {
+    const selectedProducts = products[category.key]?.slice(0, 2) || [];
+    const images = selectedProducts.map((product: { image: string; }) => product.image);
 
-  categories.forEach((category) => {
-      const currentCategory: ProductCategory = category.key
-      const selectedProducts = products[currentCategory]?.slice(0, 2) || []
-      const images = selectedProducts.map((product: { image: string; }) => product.image)
-
-    const newItem = {
+    return {
       title: category.title,
       content: <CategoryDetails description={category.description} images={images} />,
     };
-
-    accordionItems.push(newItem);
   });
 
   return (
     <section className="mt-6">
-      <h3 className='mb-4'>Categories</h3>
-
+      <h3 className="mb-4">Categories</h3>
       <Accordion items={accordionItems} />
-
       <div className="w-full aspect-video"></div>
     </section>
   );
