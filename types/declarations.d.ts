@@ -6,6 +6,8 @@ export interface Product {
   collection: string;
 }
 
+export type ProductCategory = 'ski_suits' | 'jackets' | 'pants';
+
 export interface Products {
   ski_suits: Product[];
   jackets: Product[];

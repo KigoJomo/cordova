@@ -19,6 +19,7 @@ const NewArrivals: FC = () => {
         setItems(random);
       });
   }, []);
+  
   return (
     <section className="">
       <h3>New arrivals</h3>
