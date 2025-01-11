@@ -51,7 +51,6 @@ const Categories: FC = () => {
     <section className="mt-6">
       <h3 className="mb-4">Categories</h3>
       <Accordion items={accordionItems} />
-      <div className="w-full aspect-video"></div>
     </section>
   );
 };
