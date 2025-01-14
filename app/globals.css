@@ -49,6 +49,7 @@ h2 {
 
 h3 {
   font-size: calc(var(--font-size) * var(--font-ratio));
+  font-weight: 600;
 }
 
 h4 {

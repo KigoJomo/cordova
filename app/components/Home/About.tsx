@@ -4,7 +4,7 @@ import { FC } from 'react';
 const About: FC = () => {
   return (
     <section className="mt-8 px-0">
-      <div className="w-full md:w-3/5 ml-auto flex flex-col gap-6">
+      <div className="w-full md:w-3/4 ml-auto flex flex-col gap-6">
         <h3 className='px-4 order-1'>About us</h3>
         <p className='px-4 order-2'>
           At Cordova, we believe that life is about seeking penultimate beauty

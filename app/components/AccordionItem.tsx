@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import CustomLink from './CustomLink';
+import { MoveDown } from 'lucide-react';
 
 interface AccordionItemProps {
   index: number;
@@ -18,26 +19,33 @@ const AccordionItem: FC<AccordionItemProps> = ({
 }) => {
   return (
     <div
-      id={`category-${index}`}
+      id=""
       className={`w-full overflow-hidden relative ${
         index === 1 && 'border-t'
       } border-b border-black/30 py-4 md:py-6 ${
-        isOpen ? 'pb-16 md:pb-6' : ''
+        isOpen ? '' : ''
       } transition-all duration-300`}>
       <button
         onClick={onToggle}
-        className={`w-full flex items-center gap-4 md:gap-8`}>
+        className={`w-full flex items-center gap-4 md:gap-8 cursor-pointer`}>
         <span className="">/{index}</span>
 
         <h4 className="text-xl uppercase">{title}</h4>
 
         <CustomLink
-          href={`#category-${index}`}
+          href="#"
           label="show me now"
-          className={`ml-auto ${
-            isOpen && 'opacity-50 absolute md:static bottom-4 right-0'
+          className={`hidden md:flex ml-auto pointer-events-none ${
+            isOpen && 'opacity-50'
           }`}
         />
+
+        <div
+          className={`flex md:hidden ml-auto border border-foreground px-2 aspect-square rounded-full items-center justify-center transition-all duration-300 ${
+            isOpen && 'opacity-50 rotate-180'
+          }`}>
+          <MoveDown size={12} />
+        </div>
       </button>
 
       <div
