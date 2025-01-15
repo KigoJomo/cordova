@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Accordion from '../Accordion';
 import Mail from './Mail';
-import InstagramEmbed from '../InstagramEmbed';
+import Insta from './Insta';
 
 const platforms = [
   {
@@ -12,9 +12,7 @@ const platforms = [
   {
     name: 'instagram',
     title: 'Instagram',
-    content: (
-      <InstagramEmbed url="https://www.instagram.com/reel/DA88nSRye6I/" />
-    ),
+    content: <Insta />,
   },
   {
     name: 'facebook',

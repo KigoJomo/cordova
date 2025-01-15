@@ -1,5 +1,5 @@
-import { MoveRight } from 'lucide-react';
 import { FC } from 'react';
+import CtaButton from '../CtaButton';
 
 interface MailProps {
   dark?: boolean;
@@ -41,16 +41,7 @@ const MailInput: FC<MailProps> = ({ dark = false }) => {
         />
       </div>
 
-      <button
-        type="submit"
-        className={`w-full md:w-fit h-fit px-4 py-1 flex items-center justify-center gap-4 border bg-transparent  ${
-          dark
-            ? 'border-background hover:bg-background hover:text-foreground'
-            : 'border-foreground hover:bg-foreground hover:text-background'
-        } rounded-full transition-all duration-300`}>
-        <span>Subscribe</span>
-        <MoveRight size={16} />
-      </button>
+      <CtaButton dark={dark} label='subscribe' />
     </form>
   );
 };
