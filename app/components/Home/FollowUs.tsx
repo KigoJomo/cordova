@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Accordion from '../Accordion';
 import Mail from './Mail';
 import Insta from './Insta';
+import FaceBook from './FaceBook';
 
 const platforms = [
   {
@@ -17,7 +18,7 @@ const platforms = [
   {
     name: 'facebook',
     title: 'Facebook',
-    content: <p>Follow our Facebook page.</p>,
+    content: <FaceBook />,
   },
 ];
 

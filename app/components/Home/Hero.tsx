@@ -10,7 +10,7 @@ const Hero: FC = () => {
 
   return (
     <section className="flex flex-col px-0 *:px-4 *:md:px-8">
-      <h1 className="md:text-center md:text-[14rem] md:leading-[12rem] md:tracking-[1.5rem] italic md:not-italic">
+      <h1 className="md:text-center md:text-[10rem] md:leading-[12rem] md:tracking-[.25rem] lg:tracking-[1rem] lg:text-[14rem] italic md:not-italic transition-all duration-300">
         cordova
       </h1>
 
