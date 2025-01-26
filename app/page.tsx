@@ -3,6 +3,7 @@ import Categories from "./components/Home/Categories";
 import Collections from "./components/Home/Collections";
 import FollowUs from "./components/Home/FollowUs";
 import Hero from "./components/Home/Hero";
+import Images from "./components/Home/Images";
 import NewArrivals from "./components/Home/NewArrivals";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Collections />
       <FollowUs />
+      <Images />
     </>
   );
 }

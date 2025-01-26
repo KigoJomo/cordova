@@ -80,6 +80,7 @@ html {
   overflow-y: visible;
   position: relative;
   scroll-behavior: smooth;
+  background: var(--background);
 
   body {
     color: var(--foreground);
