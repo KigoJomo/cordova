@@ -77,6 +77,7 @@ img {
 html {
   height: 100dvh;
   width: 100vw;
+  overflow-x: hidden;
   overflow-y: visible;
   position: relative;
   scroll-behavior: smooth;

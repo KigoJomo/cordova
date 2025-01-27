@@ -9,16 +9,17 @@ type SideMenuProps = {
   onClose: () => void;
   position: 'left' | 'right';
   children: ReactNode;
+  className?: string
 };
 
-const SideMenu = ({ isOpen, onClose, position, children }: SideMenuProps) => {
+const SideMenu = ({ isOpen, onClose, position, children, className }: SideMenuProps) => {
   return (
     <>
       {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
           isOpen ? 'opacity-100 visible duration-100' : 'opacity-0 invisible duration-700'
-        }`}
+        } ${className}`}
         onClick={onClose}
       ></div>
 
@@ -31,11 +32,9 @@ const SideMenu = ({ isOpen, onClose, position, children }: SideMenuProps) => {
         }`}
       >
         {/* Close Button */}
-        <div className="w-fit flex ml-auto mb-4 p-3 border rounded-full hover:rotate-90 transition-all duration-300 cursor-pointer">
-          <button onClick={onClose} className="text-gray-700 focus:outline-none">
-            <X size={16} />
-          </button>
-        </div>
+        <button onClick={onClose} className="w-fit flex ml-auto mb-4 p-3 border rounded-full hover:rotate-90 transition-all duration-300 cursor-pointer text-gray-700 focus:outline-none">
+          <X size={16} />
+        </button>
 
         {/* Content */}
         {children}

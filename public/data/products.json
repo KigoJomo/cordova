@@ -5,42 +5,42 @@
       "price": 1500,
       "description": "A sleek black ski suit designed for warmth and performance on the slopes.",
       "image": "/images/products/nova-black-skisuit.webp",
-      "collection": "Winter 2025"
+      "collection": "winter"
     },
     {
       "name": "athena patterned ski suit",
       "price": 1650,
       "description": "A stylish patterned ski suit for adventurous skiers.",
       "image": "/images/products/athena-patterned-skisuit.webp",
-      "collection": "Winter 2025"
+      "collection": "winter"
     },
     {
       "name": "heist orange ski suit",
       "price": 1550,
       "description": "Bright orange ski suit that stands out in the snow.",
       "image": "/images/products/heist-orange-skisuit.webp",
-      "collection": "Winter 2025"
+      "collection": "winter"
     },
     {
       "name": "neutral blue ski suit",
       "price": 1600,
       "description": "A neutral blue ski suit offering style and comfort.",
       "image": "/images/products/neutral-blue-skisuit.webp",
-      "collection": "Winter 2025"
+      "collection": "winter"
     },
     {
       "name": "dune pink ski suit",
       "price": 1750,
       "description": "A premium pink ski suit for a bold look on the slopes.",
       "image": "/images/products/dune-pink-skisuit.webp",
-      "collection": "Luxury Ski Collection"
+      "collection": "winter"
     },
     {
       "name": "dune roci ski suit",
       "price": 1750,
       "description": "High-performance ski suit in a modern design.",
       "image": "/images/products/dune-roci-skisuit.webp",
-      "collection": "Luxury Ski Collection"
+      "collection": "winter"
     }
   ],
   "jackets": [
@@ -49,35 +49,35 @@
       "price": 1000,
       "description": "A warm and stylish green puffer jacket for everyday wear.",
       "image": "/images/products/green-puffer-jacket.webp",
-      "collection": "Winter Essentials"
+      "collection": "winter"
     },
     {
       "name": "nauvoo wool jacket",
       "price": 1300,
       "description": "A classic wool jacket with a modern twist.",
       "image": "/images/products/nauvoo-wool-jacket.webp",
-      "collection": "Autumn Collection"
+      "collection": "classic"
     },
     {
       "name": "dune white jacket",
       "price": 1150,
       "description": "A white jacket with minimalist style and great insulation.",
       "image": "/images/products/dune-white-jacket.webp",
-      "collection": "Winter Essentials"
+      "collection": "winter"
     },
     {
       "name": "patterns jacket",
       "price": 1250,
       "description": "A trendy jacket with bold patterns to make a statement.",
       "image": "/images/products/patterns-jacket.webp",
-      "collection": "Urban Collection"
+      "collection": "urban"
     },
     {
       "name": "kozzy puffer",
       "price": 1100,
       "description": "A cozy puffer jacket to keep you warm in cold weather.",
       "image": "/images/products/kozzy-puffer.webp",
-      "collection": "Winter Essentials"
+      "collection": "winter"
     }
   ],
   "pants": [
@@ -86,35 +86,35 @@
       "price": 500,
       "description": "Comfortable casual pants for everyday wear.",
       "image": "/images/products/acura-casual-pants.webp",
-      "collection": "Casual Wear"
+      "collection": "urban"
     },
     {
       "name": "retro casual pants",
       "price": 550,
       "description": "Retro-style casual pants with a modern fit.",
       "image": "/images/products/retro-casual-pants.webp",
-      "collection": "Retro Collection"
+      "collection": "classic"
     },
     {
       "name": "moderna cargo pants",
       "price": 650,
       "description": "Modern cargo pants with plenty of pockets and style.",
       "image": "/images/products/moderna-cargo-pants.webp",
-      "collection": "Urban Collection"
+      "collection": "urban"
     },
     {
       "name": "cordova business pants",
       "price": 750,
       "description": "Sleek business pants that balance comfort and style.",
       "image": "/images/products/cordova-business-pants.webp",
-      "collection": "Formal Wear"
+      "collection": "classic"
     },
     {
       "name": "suspender khaki pants",
       "price": 600,
       "description": "Stylish khaki pants with suspenders for a unique look.",
       "image": "/images/products/suspender-khaki-pants.webp",
-      "collection": "Classic Collection"
+      "collection": "classic"
     }
   ]
 }
