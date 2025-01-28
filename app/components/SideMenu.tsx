@@ -17,7 +17,7 @@ const SideMenu = ({ isOpen, onClose, position, children, className }: SideMenuPr
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
+        className={`fixed z-40 inset-0 bg-black bg-opacity-50 transition-opacity close-cursor ${
           isOpen ? 'opacity-100 visible duration-100' : 'opacity-0 invisible duration-700'
         } ${className}`}
         onClick={onClose}
@@ -25,7 +25,7 @@ const SideMenu = ({ isOpen, onClose, position, children, className }: SideMenuPr
 
       {/* Menu */}
       <div
-        className={`fixed top-[4%] ${
+        className={`fixed z-50 top-[4%] ${
           position === 'left' ? 'left-[4%] md:left-[2%]' : 'right-[4%] md:right-[2%]'
         } h-[92%] w-64 md:w-1/3 bg-background shadow-lg p-6 md:px-12 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : position === 'left' ? '-translate-x-[120%]' : 'translate-x-[120%]'

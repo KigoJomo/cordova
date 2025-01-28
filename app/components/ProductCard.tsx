@@ -15,7 +15,7 @@ const ProductCard: FC<ProductProps> = ({ image, name, price, className }) => {
   const slug = name.toLowerCase().replace(/ /g, '-');
 
   return(
-    <div className={`w-full flex flex-col gap-2 ${className}`}>
+    <div className={`w-full flex flex-col gap-2 ${className} fade-in`}>
       <Link href={`/products/${slug}`} className="w-full overflow-hidden">
         <Image
           src={image}

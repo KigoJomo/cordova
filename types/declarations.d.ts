@@ -4,6 +4,7 @@ export interface Product {
   description: string;
   image: string;
   collection: string;
+  type?: string;
 }
 
 export type ProductCategory = 'ski_suits' | 'jackets' | 'pants';

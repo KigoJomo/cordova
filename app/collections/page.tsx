@@ -1,14 +1,9 @@
 
 import type { NextPage } from 'next';
+import { redirect } from 'next/navigation';
 
 const Page: NextPage = () => {
-  return (
-    <>
-      <section className="">
-        <h1>Collections</h1>
-      </section>  
-    </>
-  );
+  redirect('/products');
 };
 
 export default Page;

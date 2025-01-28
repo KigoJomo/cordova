@@ -74,6 +74,23 @@ img {
   display: none;
 }
 
+.close-cursor{
+  cursor: url('/images/close-cursor.webp'), auto;
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.fade-in{
+  animation: fadeIn .6s linear;
+}
+
 html {
   height: 100dvh;
   width: 100vw;
