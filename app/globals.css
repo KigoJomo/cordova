@@ -115,6 +115,8 @@ html {
       overflow: hidden;
       flex-shrink: 0 !important;
       padding: 4rem 2rem;
+
+      animation: fadeIn .5s linear;
     }
 
     @media (max-width: 768px) {
