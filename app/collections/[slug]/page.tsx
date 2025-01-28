@@ -1,8 +1,13 @@
 // app/collections/[slug]/page.tsx
 
 import ProductGrid from "@/app/components/ProductGrid";
-import { getAllProducts } from "@/app/products/[slug]/page";
 import { Product } from "@/types/declarations";
+
+async function getAllProducts(): Promise<Product[]> {
+  const data = await import('@/public/data/products.json');
+  const allProducts = [...data.ski_suits, ...data.jackets, ...data.pants];
+  return allProducts;
+}
 
 async function getProducts(collection: string): Promise<Product[]>{
   const allProducts = await getAllProducts();
