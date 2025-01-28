@@ -19,9 +19,9 @@ const Header: FC = () => {
 
   const pages = [
     { name: 'all products', href: '/products' },
-    { name: 'ski suits', href: '/collections/ski-suits' },
-    { name: 'jackets', href: '/collections/jackets' },
-    { name: 'pants', href: '/collections/pants' },
+    { name: 'classic', href: '/collections/classic' },
+    { name: 'urban', href: '/collections/urban' },
+    { name: 'winter', href: '/collections/winter' },
     { name: 'account', href: '/account' },
   ];
 

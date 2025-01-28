@@ -5,7 +5,7 @@ import { Product } from '@/types/declarations';
 import { ChevronDown } from 'lucide-react';
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
-import ProductCard from '../components/ProductCard';
+import ProductGrid from '../components/ProductGrid';
 
 const Page: NextPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -61,11 +61,7 @@ const Page: NextPage = () => {
           </div>
         </div>
 
-        <div className="product-grid mt-6 w-full grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12">
-          {products.map((product, index) => (
-            <ProductCard key={index} {...product} />
-          ))}
-        </div>
+        <ProductGrid products={products} />
 
         <hr className='my-12' />
 
