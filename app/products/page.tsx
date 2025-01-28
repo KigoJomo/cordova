@@ -1,3 +1,5 @@
+// app/products/page.tsx
+
 'use client';
 import { Product } from '@/types/declarations';
 import { ChevronDown } from 'lucide-react';
@@ -24,7 +26,7 @@ const Page: NextPage = () => {
           <h3>Product catalog</h3>
 
           <div className="filters flex flex-col">
-            <p className="text-xs opacity-35">Filters</p>
+            <p className="text-xs opacity-50">Filters</p>
 
             <div className="w-full flex items-center gap-6 md:gap-12 border-b border-black/0">
               <p className="capitalize flex items-center">
