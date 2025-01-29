@@ -3,7 +3,7 @@ export interface Product {
   price: number;
   description: string;
   image: string;
-  collection: string;
+  collection: "winter" | "classic" | "urban";
   type?: string;
 }
 

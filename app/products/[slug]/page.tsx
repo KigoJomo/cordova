@@ -1,6 +1,7 @@
 // app/products/[slug]/page.tsx
 
-import CtaButton from '@/app/components/CtaButton';
+import CartButton from '@/app/components/CartButton';
+import FavsButton from '@/app/components/FavsButton';
 import HorizontalGallery from '@/app/components/HorizontalGallery';
 import SizeSelector from '@/app/components/SizeSelector';
 import { Product } from '@/types/declarations';
@@ -9,7 +10,10 @@ import { notFound } from 'next/navigation';
 
 async function getAllProducts(): Promise<Product[]> {
   const data = await import('@/public/data/products.json');
-  const allProducts = [...data.ski_suits, ...data.jackets, ...data.pants];
+  const allProducts = [...data.ski_suits, ...data.jackets, ...data.pants].map(product => ({
+    ...product,
+    collection: product.collection as 'winter' | 'classic' | 'urban'
+  }));
   return allProducts;
 }
 
@@ -83,13 +87,8 @@ export default async function ProductPage({
           <hr className="my-2 md:my-4" />
           <SizeSelector />
           <div className="buttons w-full my-6 space-y-2">
-            <CtaButton
-              label="add to cart"
-              hideIcon
-              className="md:w-full"
-              dark
-            />
-            <CtaButton label="add to favs" hideIcon className="md:w-full" />
+            <CartButton product={product} showText className='w-full md:w-full' />
+            <FavsButton product={product} showText className='w-full md:w-full' />
           </div>
         </div>
       </section>

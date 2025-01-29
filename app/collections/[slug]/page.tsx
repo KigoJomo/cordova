@@ -5,7 +5,10 @@ import { Product } from "@/types/declarations";
 
 async function getAllProducts(): Promise<Product[]> {
   const data = await import('@/public/data/products.json');
-  const allProducts = [...data.ski_suits, ...data.jackets, ...data.pants];
+  const allProducts = [...data.ski_suits, ...data.jackets, ...data.pants].map(product => ({
+    ...product,
+    collection: product.collection as 'winter' | 'classic' | 'urban'
+  }));
   return allProducts;
 }
 

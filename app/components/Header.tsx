@@ -8,10 +8,12 @@ import { FC, useState } from 'react';
 import SideMenu from './SideMenu';
 import MenuButton from './MenuButton';
 import { usePathname } from 'next/navigation';
+import { useShop } from '@/context/ShopContext';
+import FavsView from './FavsView';
+import CartView from './CartView';
 
 const Header: FC = () => {
-  const favsCount = 0;
-  const cartCount = 0;
+  const { cart, favorites } = useShop();
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [favsOpen, setFavsOpen] = useState<boolean>(false);
@@ -70,14 +72,14 @@ const Header: FC = () => {
             onClick={() => setFavsOpen(true)}
             icon={<Heart className="md:hidden" />}
             label="favorites"
-            count={favsCount}
+            count={favorites.length}
           />
 
           <MenuButton
             onClick={() => setCartOpen(true)}
             icon={<ShoppingCart className="md:hidden" />}
             label="cart"
-            count={cartCount}
+            count={cart.length}
           />
 
           <Link
@@ -93,12 +95,28 @@ const Header: FC = () => {
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
         position="left">
-        <ul className="flex flex-col gap-6 ">
+        <Link href="/" className="">
+          <Image
+            src="/images/logo.webp"
+            alt="Cordova Logo"
+            width={100}
+            height={50}
+            className="object-contain"
+          />
+        </Link>
+
+        <hr className='my-4' />
+
+        <ul className="w-full flex flex-col gap-6 ">
           {pages.map((page, index) => (
-            <li key={index}>
+            <li key={index} className="w-full">
               <Link
                 href={page.href}
-                className="uppercase text-lg font-semibold border-b-2 border-transparent hover:border-foreground transition-all duration-300"
+                className={`w-full flex uppercase text-lg font-semibold transition-all duration-300 ${
+                  pathname.match(page.href)
+                    ? 'opacity-100'
+                    : 'opacity-50'
+                }`}
                 onClick={() => setMenuOpen(false)}>
                 {page.name}
               </Link>
@@ -112,10 +130,7 @@ const Header: FC = () => {
         isOpen={favsOpen}
         onClose={() => setFavsOpen(false)}
         position="right">
-        <div className="">
-          <h2 className="uppercase text-lg font-semibold mb-6">Favorites</h2>
-          <p className="text-gray-700">Your favs list is empty.</p>
-        </div>
+        <FavsView onClose={() => setFavsOpen(false)} />
       </SideMenu>
 
       {/* Cart Side Menu */}
@@ -123,10 +138,7 @@ const Header: FC = () => {
         isOpen={cartOpen}
         onClose={() => setCartOpen(false)}
         position="right">
-        <div className="">
-          <h2 className="uppercase text-lg font-semibold mb-6">Cart</h2>
-          <p className="text-gray-700">Your cart is empty.</p>
-        </div>
+        <CartView onClose={() => setCartOpen(false)} />
       </SideMenu>
     </header>
   );
