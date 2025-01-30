@@ -11,6 +11,8 @@ interface CtaButtonProps {
   onClick?: () => void;
   hideIcon?: boolean;
   icon?: ReactNode;
+  type?: "submit" | "button"
+  disabled?: boolean
 }
 
 const CtaButton: FC<CtaButtonProps> = ({
@@ -20,10 +22,13 @@ const CtaButton: FC<CtaButtonProps> = ({
   onClick,
   hideIcon = false,
   icon,
+  type = "button",
+  disabled = false
 }) => {
   return (
     <button
-      type="button"
+      type={type}
+      disabled={disabled}
       onClick={onClick}
       className={`w-full md:w-fit h-fit px-4 py-2 flex items-center justify-center gap-4 border ${
         dark

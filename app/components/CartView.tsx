@@ -45,11 +45,15 @@ const CartView: React.FC<CartViewProps> = ({ className, onClose }) => {
             <span className="font-semibold">Total:</span>
             <span className="italic">Ksh {total.toLocaleString()}</span>
           </div>
-          <CtaButton 
-            label="Proceed to Checkout" 
-            className="w-full"
-            onClick={onClose}
-          />
+
+          <Link href={'/checkout'} className='w-full'>
+            <CtaButton
+              label="Proceed to Checkout"
+              dark
+              className="w-full md:w-full"
+              onClick={onClose}
+            />
+          </Link>
         </div>
       )}
     </div>

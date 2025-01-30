@@ -4,7 +4,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { Product } from '@/types/declarations';
 
-interface CartItem extends Product {
+export interface CartItem extends Product {
   quantity: number;
 }
 
@@ -13,6 +13,7 @@ type ShopContextType = {
   favorites: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (productName: string) => void;
+  clearCart: () => void
   toggleFavorite: (product: Product) => void;
 };
 
@@ -68,6 +69,10 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
       });
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const toggleFavorite = (product: Product) => {
     setFavorites((prev) =>
       prev.some((item) => item.name === product.name)
@@ -78,7 +83,7 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ShopContext.Provider
-      value={{ cart, favorites, addToCart, removeFromCart, toggleFavorite }}>
+      value={{ cart, favorites, addToCart, removeFromCart, toggleFavorite, clearCart }}>
       {children}
     </ShopContext.Provider>
   );
