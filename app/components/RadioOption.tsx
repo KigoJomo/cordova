@@ -1,16 +1,16 @@
 // components/RadioOption.tsx
 'use client';
 
-import { UseFormRegister } from 'react-hook-form';
+import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 
-interface RadioOptionProps {
+interface RadioOptionProps<T extends FieldValues> {
   value: string;
   label: string;
-  register: UseFormRegister<any>;
-  name: string;
+  register: UseFormRegister<T>;
+  name: Path <T>;
 }
 
-export const RadioOption = ({ value, label, register, name }: RadioOptionProps) => (
+export const RadioOption = <T extends FieldValues>({ value, label, register, name }: RadioOptionProps<T>) => (
   <label className="flex items-center gap-2">
     <input
       type="radio"
